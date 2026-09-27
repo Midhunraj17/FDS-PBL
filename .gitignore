@@ -1,0 +1,35 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated outputs
+outputs/
+
+# Raw datasets
+data/raw/
+
+# Large model files
+*.pt
+*.pth
+*.ckpt
+
+# Logs
+*.log

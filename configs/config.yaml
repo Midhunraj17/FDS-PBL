@@ -1,0 +1,51 @@
+project:
+  name: TrafficScope-AI
+  version: 1.0.0
+  seed: 42
+
+dataset:
+  name: PEMS04
+  root: data/raw
+  history: 12
+  horizon: 3
+  feature_names: [flow, speed, occupancy]
+  stride: 3
+
+split:
+  train: 0.70
+  validation: 0.15
+  test: 0.15
+
+missingness:
+  default_rate: 0.30
+  rates: [0.10, 0.30, 0.50]
+  mode: random
+  mask_seed: 42
+
+model:
+  hidden_dim: 16
+  gcn_layers: 2
+  gru_layers: 1
+  dropout: 0.10
+
+training:
+  batch_size: 8
+  epochs: 4
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  patience: 2
+  num_workers: 0
+  max_train_samples: 600
+  max_val_samples: 200
+  max_test_samples: 100
+
+evaluation:
+  target_feature: 0
+  missing_rates: [0.10, 0.30, 0.50]
+
+congestion:
+  speed_percentile: 25
+
+dashboard:
+  default_sensor: 0
+  default_horizon: 3
